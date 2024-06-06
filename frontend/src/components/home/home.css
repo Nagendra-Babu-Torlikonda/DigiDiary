@@ -1,0 +1,20 @@
+.home-page {
+    margin-top: 50px;
+  }
+  
+  .home-page h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .home-page .card {
+    transition: transform 0.3s;
+  }
+  
+  .home-page .card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Add animate.css for animations */
+  @import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
+  

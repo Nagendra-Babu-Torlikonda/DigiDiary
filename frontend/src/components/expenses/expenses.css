@@ -1,0 +1,185 @@
+.expense-container {
+  max-width: 95vw;
+  width: 90%;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.expense-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.expense-heading {
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+#myexpenseSearch {
+  max-width: 50%;
+  width: 20%;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid rgb(150, 150, 200);
+  margin: 0.5rem 0;
+}
+
+.expenses-add-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0.5rem 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.expenses-add-button:hover {
+  background-color: aqua;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.3rem 0.5rem;
+}
+
+.expense-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.expense-debit,
+.expense-credit {
+  flex: 1;
+  min-width: 0;
+}
+
+.expense-debit-list,
+.expense-credit-list {
+  min-height: 200px;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.expense-debit-list {
+  background-color: rgba(240, 100, 100, 0.3);
+}
+
+.expense-credit-list {
+  background-color: rgba(144, 238, 144, 0.5);
+}
+
+.expense-list-head {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  grid-column: span 2;
+}
+
+.expense-list-item {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 0.4rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure proper spacing */
+  height: 100%; /* Ensure items take full height of the grid cell */
+  opacity: 0;
+  animation: slideUp 0.5s ease-in-out forwards;
+}
+
+.expense-list-item div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.expense-list-item .title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.4rem;
+  font-weight: 500;
+  flex: 1;
+}
+
+.expense-list-item .category {
+  margin: 0 1rem;
+}
+
+.expense-list-item p {
+  margin: 0;
+  word-wrap: break-word; /* Ensure text wraps within the container */
+}
+
+@media (max-width: 768px) {
+  .expense-list {
+    flex-direction: column;
+  }
+
+  .expense-debit-list,
+  .expense-credit-list {
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .expense-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #myexpenseSearch {
+    width: 100%;
+  }
+
+  .expenses-add-button {
+    margin: 0.5rem 0;
+  }
+
+  .expense-list-item {
+    padding: 0.5rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
